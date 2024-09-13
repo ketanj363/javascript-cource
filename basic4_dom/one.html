@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM learning</title>
+</head>
+<style>
+    .bg-black{
+        background-color: rgb(107, 101, 101);
+        color: white;
+     
+    }
+    body{
+        background: gray;
+    }
+</style>
+<body class="bg-black">
+    <div >
+        <h1 class="heading">Dom leaning by ketan jain</h1>
+        <h2>Lorem, ipsum dolor.</h2>
+        <h2>Lorem, ipsum dolor.</h2>
+        <h2>Lorem, ipsum dolor.</h2>
+        <h2>Lorem, ipsum dolor.</h2>
+        <p>Lorem ipsum dolor sit amet consectetur.</p>
+    </div>
+    <ul>
+        <li>one</li>
+        <li>two</li>
+        <li>three</li>
+    </ul>
+</body>
+
+<body style="background-color: black;color:aliceblue">
+    <div class="parent">
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednusday</div>
+        <div class="day">Thrusday</div>
+        <div class="day">Friday</div>
+        <div class="day">Saturday</div>
+    </div>
+</body>
+<script>
+const parent = document.querySelector('.parent');
+console.log(parent)
+console.log(parent.children)
+console.log(parent.children[1].innerHTML);
+for (let i = 0; i< parent.children.length; i++) {
+    console.log(parent.children[i].innerHTML);    
+}
+
+parent.children[1].style.color = "orange"
+console.log(parent.firstElementChild);
+console.log(parent.lastElementChild);
+const dayone = document.querySelector('.day')
+console.log(dayone);
+console.log(dayone.parentElement);
+console.log(dayone.nextElementSibling);
+
+console.log("NODE: " ,parent.childNodes); 
+
+
+</script>
+</html>
