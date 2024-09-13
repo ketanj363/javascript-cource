@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event | JS</title>
+</head>
+<body style="background-color: black; color: antiquewhite;">
+    <h2>Amazing Images</h2>
+    <div>
+        <ul id="images">
+            <li><img width="200px" height="100px" id="river" src="https://imgs.search.brave.com/UYRUoUaycWH3b768EG8jtfAqw4UPRaRnXyN94I4yPBw/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMucGV4ZWxzLmNv/bS9waG90b3MvMjA0/MTQ2NzMvcGV4ZWxz/LXBob3RvLTIwNDE0/NjczL2ZyZWUtcGhv/dG8tb2YtYmlyZHMt/ZXllLXZpZXctb2Yt/ZXJpY2VpcmEtY2l0/eS1pbi1wb3J0dWdh/bC5qcGVnP2F1dG89/Y29tcHJlc3MmY3M9/dGlueXNyZ2ImZHBy/PTEmdz01MDA" alt="photoshop"></li>
+            <li><img width="200px" height="100px" id="mountain" src="https://imgs.search.brave.com/IUJgLSdJk7gGkiXhsjoevQ4vNnhfh-UgE6s-zuLF3xE/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMTA3/MTEwNDczNC9waG90/by93b21hbi1zaWxo/b3VldHRlLWF0LXN1/bnNldC1vbi1oaWxs/LmpwZz9zPTYxMng2/MTImdz0wJms9MjAm/Yz0zUHJDSGNsdFM0/VHR4VVhIeFQ5ckxY/ckcxNTRMcGY3MEJO/RFFma3lzUm5RPQ" alt=""></li>
+            <li><img width="200px" height="100px"id="car" src="https://imgs.search.brave.com/5apQjG7V2yDRtRNkR5GnbEA9budZnDSNumiLbdDnPBw/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/cHJlbWl1bS1waG90/by9uZXctY2FyLWlz/LWJyYW5kLW5ldy12/ZXJzaW9uLWF1dG9t/b2JpbGUtbW9kZWxf/OTcwOTA3LTk4Nzku/anBnP3NpemU9NjI2/JmV4dD1qcGc" alt=""></li>
+            <li><img width="200px" height="100px"id="beach" src="https://imgs.search.brave.com/_qc8dcVdO0ckVOCUtUhWzx70s64VuI53VClFauwfhAs/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMTMw/ODE3Nzg1NC9waG90/by9zdW5zZXQtaGF3/YWlpLWJlYWNoLmpw/Zz9zPTYxMng2MTIm/dz0wJms9MjAmYz1r/alphMmFPSzZxSE8t/bS1QY0dGazhPWDdT/LURSR3h2WXZkVGRu/STV4VU9NPQ" alt=""></li>
+            <li><img width="200px" height="100px" id="desert" src="https://imgs.search.brave.com/qSBN9iDw_pUwpFq2hf-UfvXLBxZe_0mhHZhmZ98g3zo/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMuY3RmYXNzZXRz/Lm5ldC9ocmx0eDEy/cGw4aHEvNTU5Nnoy/QkNSOUttVDFLZVJC/ck9RYS80MDcwZmQ0/ZTJmMWExM2Y3MWMy/YzQ2YWZlYjE4ZTQx/Yy9zaHV0dGVyc3Rv/Y2tfNDUxMDc3MDQz/LWhlcm8xLmpwZz9m/aXQ9ZmlsbCZ3PTYw/MCZoPTQwMA" alt=""></li>
+            <li><a href="https://www.google.com/" id="google">Google</a></li>
+        </ul>
+    </div>
+</body>
+<script>
+//  attachevent()
+// jQuery - on
+
+
+//     document.getElementById('car'),onclick =function(){
+//    alert('car clicked')
+//     }
+
+//  false , true is the third parameter which are the deafult case 
+//  type , timestamp , defaultPrevented 
+//  targer , toElement , srcElement , currentTarget
+//  interview questo=ion = cleint x , client y , screen x,screen y 
+//  altkey, ctlrkey,shilftkey,keycode
+
+//  2nd method 
+// document.getElementById('car').addEventListener("click",function(e){
+//     console.log(e);
+    
+// } , false) // ture / false are dalault parameter
+
+// document.getElementById('images').addEventListener('click' , function(e){
+//     console.log("clicked inside the ul");
+// }, false)
+// document.getElementById('car').addEventListener('click' , function(e){
+//     console.log("clicked car");
+//     e.stopPropagation() // this will used to stop bubbling 
+// }, false)
+// //  now its an bubbling event   from inside to outside
+// //  if we use ture then it will be  capturing  from outside to inside 
+
+// document.getElementById('google').addEventListener('click', function(e){
+// e.preventDefault();  
+// e.stopPropagation();
+// console.log('google clicked');
+// },false)
+
+
+//  project things
+document.querySelector('#images').addEventListener('click',function(e){
+    console.log(e.target.tagName);
+    if (e.target.tagName === 'IMG') {
+        console.log(e.target.id);
+        
+    let removeit = e.target.parentNode
+    removeit.remove() 
+    // removeit.parentNode.removeChild(removeit) // 2nd method 
+    }
+     
+    
+    
+},false)
+
+
+</script> 
+</html>
